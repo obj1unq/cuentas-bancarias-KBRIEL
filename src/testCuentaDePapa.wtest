@@ -1,0 +1,18 @@
+import cuentas.cuentaDePapa
+
+describe "cuenta de papa" {
+	test "el saldo inicial es 0" {
+		assert.equals(0, cuentaDePapa.saldo())
+	}
+	
+	test "depositar" {
+		cuentaDePapa.depositar(1510)
+		assert.equals(1470, cuentaDePapa.saldo())
+	}
+
+	test "extraer" {
+		cuentaDePapa.depositar(1510)
+		cuentaDePapa.extraer(70)
+		assert.equals(1400, cuentaDePapa.saldo())
+	}
+}
